@@ -5,7 +5,7 @@ function Header(props) {
     <header>
       <h1 className="logo">My Library</h1>
       <button onClick={props.onClick} className="btn">
-        Add Book
+        Add New Book
       </button>
     </header>
   );

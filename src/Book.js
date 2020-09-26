@@ -3,6 +3,7 @@ class Book {
     this.title = title;
     this.isbn = isbn;
     this.author = author;
+    this.pages = pages;
     this.isRead = isRead;
     this.coverImage = `http://covers.openlibrary.org/b/isbn/${this.isbn}-M.jpg`;
   }
