@@ -1,13 +1,65 @@
-body {
+* {
+  font-family: Futura;
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header {
+  width: 100%;
+  height: 100px;
+  background-color: #f86833;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.logo {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.btn {
+  width: 30%;
+  margin: auto;
+  height: 25px;
+  border: none;
+  background-color: #6090ea;
+  color: white;
+  border-radius: 5px;
+}
+
+.books-container {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.book-card {
+  width: 90%;
+  padding: 10px;
+  margin: auto;
+  margin-top: 20px;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  background-color: #d7d3d3;
+  border-radius: 5px;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 8.3px 7.9px rgba(0, 0, 0, 0.072),
+    0 15.8px 18.4px rgba(0, 0, 0, 0.086),
+    0 20px 30px rgba(0, 0, 0, 0.12);
+}
+
+img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.read-check {
+  margin-left: 10px;
 }
