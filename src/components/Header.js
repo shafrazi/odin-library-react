@@ -1,10 +1,12 @@
 import React from "react";
 
-function Header() {
+function Header(props) {
   return (
     <header>
       <h1 className="logo">My Library</h1>
-      <button className="btn">Add Book</button>
+      <button onClick={props.onClick} className="btn">
+        Add Book
+      </button>
     </header>
   );
 }

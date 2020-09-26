@@ -8,10 +8,14 @@ class App extends React.Component {
     this.state = {};
   }
 
+  displayForm() {
+    console.log("hello");
+  }
+
   render() {
     return (
       <div>
-        <Header />
+        <Header onClick={this.displayForm} />
         <div className="books-container">
           <BookCard />
           <BookCard />
