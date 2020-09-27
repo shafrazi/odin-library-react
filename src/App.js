@@ -12,25 +12,51 @@ const book1 = new Book(
   true
 );
 
+const book2 = new Book(
+  "The Waste Lands",
+  "0451210867",
+  "Stephen King",
+  608,
+  false
+);
+
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      books: [book1],
+      books: [book1, book2],
       bookTitle: "",
       author: "",
       isbn: "",
       pages: 0,
       isRead: false,
+      modalState: {
+        display: "none",
+      },
     };
 
     this.displayForm = this.displayForm.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.createBook = this.createBook.bind(this);
+    this.hideModal = this.hideModal.bind(this);
+    this.editBook = this.editBook.bind(this);
   }
 
   displayForm() {
-    console.log("hello");
+    this.setState({
+      modalState: {
+        display: "block",
+      },
+    });
+  }
+
+  hideModal(event) {
+    event.preventDefault();
+    this.setState({
+      modalState: {
+        display: "none",
+      },
+    });
   }
 
   handleChange(event) {
@@ -63,15 +89,26 @@ class App extends React.Component {
     });
   }
 
+  editBook(book) {
+    console.log(book);
+    this.displayForm();
+  }
+
   render() {
     const bookCardComponents = this.state.books.map((book) => {
-      return <BookCard key={book.isbn} book={book} />;
+      return <BookCard key={book.isbn} book={book} editBook={this.editBook} />;
     });
 
     return (
-      <div>
+      <div className="container">
         <Header onClick={this.displayForm} />
-        <Form handleChange={this.handleChange} handleClick={this.createBook} />
+        <div className="modal" style={this.state.modalState}>
+          <Form
+            handleChange={this.handleChange}
+            handleClick={this.createBook}
+            hideModal={this.hideModal}
+          />
+        </div>
         <div className="books-container">{bookCardComponents}</div>
       </div>
     );
