@@ -8,25 +8,29 @@ class Form extends React.Component {
           <input
             type="text"
             placeholder="Book Title"
-            name="bookTitle"
+            name="title"
+            value={this.props.book.title}
             onChange={this.props.handleChange}
           />
           <input
             type="text"
             placeholder="Author"
             name="author"
+            value={this.props.book.author}
             onChange={this.props.handleChange}
           />
           <input
             type="text"
             placeholder="ISBN"
             name="isbn"
+            value={this.props.book.isbn}
             onChange={this.props.handleChange}
           />
           <input
             type="text"
             placeholder="No. of pages"
             name="pages"
+            value={this.props.book.pages}
             onChange={this.props.handleChange}
           />
           <label>
@@ -35,12 +39,12 @@ class Form extends React.Component {
               type="checkbox"
               name="isRead"
               onChange={this.props.handleChange}
-              checked={this.props.isRead}
+              checked={this.props.book.isRead}
               className="form-check"
             />
           </label>
           <button className="btn btn-primary" onClick={this.props.handleClick}>
-            Add book
+            {this.props.formMode === "edit" ? "Save" : "Add Book"}
           </button>
           <button className="btn btn-danger" onClick={this.props.hideModal}>
             Cancel

@@ -25,14 +25,17 @@ class App extends React.Component {
     super();
     this.state = {
       books: [book1, book2],
-      bookTitle: "",
-      author: "",
-      isbn: "",
-      pages: 0,
-      isRead: false,
+      currentBook: {
+        title: "",
+        author: "",
+        isbn: "",
+        pages: "",
+        isRead: false,
+      },
       modalState: {
         display: "none",
       },
+      formMode: "",
     };
 
     this.displayForm = this.displayForm.bind(this);
@@ -44,9 +47,17 @@ class App extends React.Component {
 
   displayForm() {
     this.setState({
+      currentBook: {
+        title: "",
+        author: "",
+        isbn: "",
+        pages: "",
+        isRead: false,
+      },
       modalState: {
         display: "block",
       },
+      formMode: "new",
     });
   }
 
@@ -60,13 +71,24 @@ class App extends React.Component {
   }
 
   handleChange(event) {
+    event.persist();
     if (event.target.type === "checkbox") {
-      this.setState({
-        [event.target.name]: event.target.checked,
+      this.setState((prevState) => {
+        return {
+          currentBook: {
+            ...prevState.currentBook,
+            [event.target.name]: event.target.checked,
+          },
+        };
       });
     } else {
-      this.setState({
-        [event.target.name]: event.target.value,
+      this.setState((prevState) => {
+        return {
+          currentBook: {
+            ...prevState.currentBook,
+            [event.target.name]: event.target.value,
+          },
+        };
       });
     }
   }
@@ -74,11 +96,11 @@ class App extends React.Component {
   createBook(event) {
     event.preventDefault();
     const book = new Book(
-      this.state.bookTitle,
-      this.state.isbn,
-      this.state.author,
-      this.state.pages,
-      this.state.isRead
+      this.state.currentBook.title,
+      this.state.currentBook.isbn,
+      this.state.currentBook.author,
+      this.state.currentBook.pages,
+      this.state.currentBook.isRead
     );
 
     this.setState((prevState) => {
@@ -90,8 +112,11 @@ class App extends React.Component {
   }
 
   editBook(book) {
-    console.log(book);
     this.displayForm();
+    this.setState({
+      currentBook: book,
+      formMode: "edit",
+    });
   }
 
   render() {
@@ -104,9 +129,11 @@ class App extends React.Component {
         <Header onClick={this.displayForm} />
         <div className="modal" style={this.state.modalState}>
           <Form
+            book={this.state.currentBook}
             handleChange={this.handleChange}
             handleClick={this.createBook}
             hideModal={this.hideModal}
+            formMode={this.state.formMode}
           />
         </div>
         <div className="books-container">{bookCardComponents}</div>
