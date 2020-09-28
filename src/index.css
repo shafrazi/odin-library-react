@@ -36,7 +36,7 @@ header {
 }
 
 .books-container {
-  width: 90%;
+  width: 95%;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr;
