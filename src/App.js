@@ -36,6 +36,7 @@ class App extends React.Component {
         display: "none",
       },
       formMode: "",
+      editBookIsbn: "",
     };
 
     this.displayForm = this.displayForm.bind(this);
@@ -43,6 +44,7 @@ class App extends React.Component {
     this.createBook = this.createBook.bind(this);
     this.hideModal = this.hideModal.bind(this);
     this.editBook = this.editBook.bind(this);
+    this.saveBook = this.saveBook.bind(this);
   }
 
   displayForm() {
@@ -116,7 +118,31 @@ class App extends React.Component {
     this.setState({
       currentBook: book,
       formMode: "edit",
+      editBookIsbn: book.isbn,
     });
+  }
+
+  saveBook(event) {
+    event.preventDefault();
+    this.setState((prevState) => {
+      for (let i = 0; i < prevState.books.length; i++) {
+        if (prevState.books[i].isbn === prevState.editBookIsbn) {
+          prevState.books.splice(i, 1);
+        }
+      }
+      const editedBook = new Book(
+        this.state.currentBook.title,
+        this.state.currentBook.isbn,
+        this.state.currentBook.author,
+        this.state.currentBook.pages,
+        this.state.currentBook.isRead
+      );
+      prevState.books.push(editedBook);
+      return {
+        books: prevState.books,
+      };
+    });
+    this.hideModal(event);
   }
 
   render() {
@@ -133,6 +159,7 @@ class App extends React.Component {
             handleChange={this.handleChange}
             handleClick={this.createBook}
             hideModal={this.hideModal}
+            saveBook={this.saveBook}
             formMode={this.state.formMode}
           />
         </div>

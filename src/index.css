@@ -111,6 +111,12 @@ form {
   row-gap: 10px;
 }
 
+.icon-btn {
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
 .form-check {
   margin-left: 10px;
 }

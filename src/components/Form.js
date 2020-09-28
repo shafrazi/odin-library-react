@@ -43,7 +43,14 @@ class Form extends React.Component {
               className="form-check"
             />
           </label>
-          <button className="btn btn-primary" onClick={this.props.handleClick}>
+          <button
+            className="btn btn-primary"
+            onClick={
+              this.props.formMode === "edit"
+                ? this.props.saveBook
+                : this.props.handleClick
+            }
+          >
             {this.props.formMode === "edit" ? "Save" : "Add Book"}
           </button>
           <button className="btn btn-danger" onClick={this.props.hideModal}>
