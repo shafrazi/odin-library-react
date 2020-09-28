@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "98891142a566b5ffe8e26b5ff9c02400",
+    "revision": "0a1eccba841a9ff0c1dd9872a6916867",
     "url": "/odin-library-react/index.html"
   },
   {
-    "revision": "7596e72beeb639861a86",
-    "url": "/odin-library-react/static/css/main.5d72e438.chunk.css"
+    "revision": "a678707987690e9657f3",
+    "url": "/odin-library-react/static/css/main.65fd21e4.chunk.css"
   },
   {
     "revision": "a05bd4bc1c23b51fc562",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/odin-library-react/static/js/2.e88a9003.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7596e72beeb639861a86",
-    "url": "/odin-library-react/static/js/main.1b306e3f.chunk.js"
+    "revision": "a678707987690e9657f3",
+    "url": "/odin-library-react/static/js/main.5f0042c7.chunk.js"
   },
   {
     "revision": "7179a63f4289d3a369f8",

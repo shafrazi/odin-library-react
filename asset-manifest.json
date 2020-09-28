@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/odin-library-react/static/css/main.5d72e438.chunk.css",
-    "main.js": "/odin-library-react/static/js/main.1b306e3f.chunk.js",
-    "main.js.map": "/odin-library-react/static/js/main.1b306e3f.chunk.js.map",
+    "main.css": "/odin-library-react/static/css/main.65fd21e4.chunk.css",
+    "main.js": "/odin-library-react/static/js/main.5f0042c7.chunk.js",
+    "main.js.map": "/odin-library-react/static/js/main.5f0042c7.chunk.js.map",
     "runtime-main.js": "/odin-library-react/static/js/runtime-main.b0292c88.js",
     "runtime-main.js.map": "/odin-library-react/static/js/runtime-main.b0292c88.js.map",
     "static/js/2.e88a9003.chunk.js": "/odin-library-react/static/js/2.e88a9003.chunk.js",
     "static/js/2.e88a9003.chunk.js.map": "/odin-library-react/static/js/2.e88a9003.chunk.js.map",
     "index.html": "/odin-library-react/index.html",
-    "precache-manifest.60bf24bb395e45e8660544b9eb1e5bfe.js": "/odin-library-react/precache-manifest.60bf24bb395e45e8660544b9eb1e5bfe.js",
+    "precache-manifest.abf854170e9c79aa4fab34b1c2787399.js": "/odin-library-react/precache-manifest.abf854170e9c79aa4fab34b1c2787399.js",
     "service-worker.js": "/odin-library-react/service-worker.js",
-    "static/css/main.5d72e438.chunk.css.map": "/odin-library-react/static/css/main.5d72e438.chunk.css.map",
+    "static/css/main.65fd21e4.chunk.css.map": "/odin-library-react/static/css/main.65fd21e4.chunk.css.map",
     "static/js/2.e88a9003.chunk.js.LICENSE.txt": "/odin-library-react/static/js/2.e88a9003.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b0292c88.js",
     "static/js/2.e88a9003.chunk.js",
-    "static/css/main.5d72e438.chunk.css",
-    "static/js/main.1b306e3f.chunk.js"
+    "static/css/main.65fd21e4.chunk.css",
+    "static/js/main.5f0042c7.chunk.js"
   ]
 }
