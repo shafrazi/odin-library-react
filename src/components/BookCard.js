@@ -20,6 +20,7 @@ class BookCard extends React.Component {
         book: prevState.book,
       };
     });
+    console.log("hello");
   }
 
   render() {
@@ -36,8 +37,10 @@ class BookCard extends React.Component {
             type="checkbox"
             className="read-check"
             name="isRead"
-            checked={this.state.book.isRead}
-            onChange={this.handleChange}
+            checked={this.props.book.isRead}
+            onChange={(event) => {
+              this.props.changeRead(event, this.props.book);
+            }}
           />
         </label>
         <br />

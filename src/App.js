@@ -46,6 +46,7 @@ class App extends React.Component {
     this.editBook = this.editBook.bind(this);
     this.saveBook = this.saveBook.bind(this);
     this.deleteBook = this.deleteBook.bind(this);
+    this.changeRead = this.changeRead.bind(this);
   }
 
   displayForm() {
@@ -159,6 +160,22 @@ class App extends React.Component {
     this.hideModal(event);
   }
 
+  changeRead(event, book) {
+    event.persist();
+    this.setState((prevState) => {
+      for (let i = 0; i < prevState.books.length; i++) {
+        if (prevState.books[i] === book) {
+          book.isRead = event.target.checked;
+          prevState.books.splice(i, 1, book);
+          // prevState.books.push(book);
+        }
+      }
+      return {
+        books: prevState.books,
+      };
+    });
+  }
+
   render() {
     const bookCardComponents = this.state.books.map((book) => {
       return (
@@ -167,6 +184,7 @@ class App extends React.Component {
           book={book}
           editBook={this.editBook}
           deleteBook={this.deleteBook}
+          changeRead={this.changeRead}
         />
       );
     });
