@@ -3,26 +3,6 @@ import { FaEdit } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
 
 class BookCard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      book: this.props.book,
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    event.persist();
-    this.setState((prevState) => {
-      prevState.book.isRead = event.target.checked;
-      return {
-        book: prevState.book,
-      };
-    });
-    console.log("hello");
-  }
-
   render() {
     return (
       <div className="book-card">
