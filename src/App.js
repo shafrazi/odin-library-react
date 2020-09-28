@@ -45,6 +45,7 @@ class App extends React.Component {
     this.hideModal = this.hideModal.bind(this);
     this.editBook = this.editBook.bind(this);
     this.saveBook = this.saveBook.bind(this);
+    this.deleteBook = this.deleteBook.bind(this);
   }
 
   displayForm() {
@@ -122,6 +123,19 @@ class App extends React.Component {
     });
   }
 
+  deleteBook(book) {
+    this.setState((prevState) => {
+      for (let i = 0; i < prevState.books.length; i++) {
+        if (prevState.books[i].isbn === book.isbn) {
+          prevState.books.splice(i, 1);
+        }
+      }
+      return {
+        books: prevState.books,
+      };
+    });
+  }
+
   saveBook(event) {
     event.preventDefault();
     this.setState((prevState) => {
@@ -147,7 +161,14 @@ class App extends React.Component {
 
   render() {
     const bookCardComponents = this.state.books.map((book) => {
-      return <BookCard key={book.isbn} book={book} editBook={this.editBook} />;
+      return (
+        <BookCard
+          key={book.isbn}
+          book={book}
+          editBook={this.editBook}
+          deleteBook={this.deleteBook}
+        />
+      );
     });
 
     return (

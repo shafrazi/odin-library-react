@@ -56,7 +56,7 @@ class BookCard extends React.Component {
           size="20px"
           color="#ed487f"
           onClick={() => {
-            this.props.editBook(this.props.book);
+            this.props.deleteBook(this.props.book);
           }}
         />
       </div>
